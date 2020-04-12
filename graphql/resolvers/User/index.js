@@ -3,6 +3,7 @@ import Post from "../../../server/models/Post";
 import Comment from "../../../server/models/Comment";
 
 export default {
+  // READ DATA
   Query: {
     user: async (parent, { _id }, context, info) => {
       return await User.findOne({ _id }).exec();
@@ -22,12 +23,14 @@ export default {
       }));
     }
   },
+  // WRITE DATA
   Mutation: {
     createUser: async (parent, { user }, context, info) => {
       const newUser = await new User({
         name: user.name,
         email: user.email,
-        age: user.age
+        age: user.age,
+        password: user.password
       });
 
       return new Promise((resolve, reject) => {

@@ -3,6 +3,7 @@ export default `
     _id: String!
     name: String!
     email: String!
+    password: String!
     age: Int!
     posts: [Post!]!
     comments: [Comment!]!
@@ -23,11 +24,13 @@ export default `
     name: String!
     email: String!
     age: Int!
+    password: String!
   }
   
   input UpdateUserInput {
     name: String
     email: String
     age: Int
+    password: String
   } 
 `;
